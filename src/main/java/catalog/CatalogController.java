@@ -3,7 +3,6 @@ package catalog;
 import catalog.models.*;
 
 import java.util.List;
-import java.util.ArrayList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,11 +30,7 @@ public class CatalogController {
     @RequestMapping(value = "/items", method = RequestMethod.GET)
     @ResponseBody
     Iterable<Inventory> getInventory() {
-        List<Inventory> l = new ArrayList<Inventory>(itemsRepo.findAll());
-        Inventory anInventory = new Inventory("Lavatrice", "San Giorgio", 480000, "Img unavailable", "", 7800);
-        aInventory.setId(12921l);
-        l.add(l);
-        return l;
+        return itemsRepo.findAll();
     }
 
     /**
